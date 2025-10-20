@@ -1,0 +1,11 @@
+server:
+  port: 9296
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///D:/Microservice-Project/config-repo

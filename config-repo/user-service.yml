@@ -1,0 +1,11 @@
+# D:\Microservice-Project\config-repo\user-service.yml
+
+server:
+  port: 0 # Chạy ở cổng ngẫu nhiên
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

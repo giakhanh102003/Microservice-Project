@@ -1,0 +1,26 @@
+# D:\Microservice-Project\config-repo\api-gateway.yml
+
+server:
+  port: 9191 # Cổng mà API Gateway sẽ chạy
+
+# Cấu hình Eureka client cho Gateway
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+# Cấu hình định tuyến (routes) cho Gateway
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/products/**

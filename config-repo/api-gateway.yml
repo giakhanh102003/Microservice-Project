@@ -15,15 +15,20 @@ eureka:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: user-service
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/users/**
-        - id: AUTH-SERVICE
-          uri: lb://AUTH-SERVICE
-          predicates:
-            - Path=/auth/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+#      routes:
+#        - id: user-service
+#          uri: lb://USER-SERVICE
+#          predicates:
+#            - Path=/users/**
+#        - id: AUTH-SERVICE
+#          uri: lb://AUTH-SERVICE
+#          predicates:
+#            - Path=/auth/**
+
 logging:
   level:
     org.springframework.cloud.gateway: TRACE

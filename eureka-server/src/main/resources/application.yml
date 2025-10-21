@@ -1,3 +1,4 @@
+# D:\Microservice-Project\eureka-server\application.yml
 server:
   port: 8761
 

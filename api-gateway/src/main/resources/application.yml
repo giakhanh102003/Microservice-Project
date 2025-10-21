@@ -1,26 +1,9 @@
+# D:\Microservice-Project\api-gateway\application.yml
 server:
-  port: 9191
+  port: 8080
 
 spring:
   application:
     name: api-gateway
-    config:
-      import: configserver:http://localhost:9296
-    cloud:
-  cloud:
-    gateway:
-      routes:
-        - id: user-service
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/users/**
-        - id: product-service
-          uri: lb://PRODUCT-SERVICE
-          predicates:
-            - Path=/products/**
-
-# Cấu hình Eureka client cho Gateway
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+  config:
+    import: "configserver:http://localhost:8888"

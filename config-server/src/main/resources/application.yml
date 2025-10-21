@@ -1,5 +1,6 @@
+# D:\Microservice-Project\config-server\application.yml
 server:
-  port: 9296
+  port: 8888
 
 spring:
   application:
@@ -8,4 +9,6 @@ spring:
     config:
       server:
         git:
-          uri: file:///D:/Microservice-Project/config-repo
+          uri: https://github.com/giakhanh102003/Microservice-Project.git
+          clone-on-start: true
+          search-paths: config-repo

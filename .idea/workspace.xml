@@ -4,24 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="refactor: bootstrap không hỗ trợ với spring boot 3.5.6">
+    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="feat: tạo endpoint product và category">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;giakhanh102003&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/giakhanh102003/Microservice-Project.git&quot;,
+    &quot;accountId&quot;: &quot;907f5cbc-d899-4f0f-8a10-0c33aef3c607&quot;
+  }
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -31,33 +51,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.api-gateway [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.api-gateway [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Microservice-Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.api-gateway [clean].executor": "Run",
+    "Maven.api-gateway [install].executor": "Run",
+    "Maven.api-gateway [validate].executor": "Run",
+    "Maven.catalog-service [clean].executor": "Run",
+    "Maven.catalog-service [compile].executor": "Run",
+    "Maven.catalog-service [install].executor": "Run",
+    "Maven.catalog-service [validate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.CatalogServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Microservice-Project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -72,6 +99,20 @@
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="auth-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CatalogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="catalog-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.catalogservice.CatalogServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,6 +153,11 @@
       <workItem from="1761010342433" duration="5070000" />
       <workItem from="1761031422962" duration="323000" />
       <workItem from="1761031765456" duration="153000" />
+      <workItem from="1761032038033" duration="11046000" />
+      <workItem from="1761060881606" duration="7279000" />
+      <workItem from="1761068277217" duration="678000" />
+      <workItem from="1761096798798" duration="2185000" />
+      <workItem from="1761099544178" duration="16320000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Create config">
       <option name="closed" value="true" />
@@ -129,15 +175,151 @@
       <option name="project" value="LOCAL" />
       <updated>1760949920509</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="config thành phần chính">
+      <option name="closed" value="true" />
+      <created>1761032072334</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761032072334</updated>
+    </task>
+    <task id="LOCAL-00004" summary="config auth-service">
+      <option name="closed" value="true" />
+      <created>1761034122568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761034122568</updated>
+    </task>
+    <task id="LOCAL-00005" summary="route auth-service">
+      <option name="closed" value="true" />
+      <created>1761034245684</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761034245684</updated>
+    </task>
+    <task id="LOCAL-00006" summary="logging">
+      <option name="closed" value="true" />
+      <created>1761042717841</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761042717841</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: cập nhật cách route của api-gateway">
+      <option name="closed" value="true" />
+      <created>1761062755685</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761062755685</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: cập nhật cách route của api-gateway">
+      <option name="closed" value="true" />
+      <created>1761065002141</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761065002141</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: bỏ filters: StripPrefix=1">
+      <option name="closed" value="true" />
+      <created>1761067136799</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1761067136799</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: thay đổi dependency">
+      <option name="closed" value="true" />
+      <created>1761068311321</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1761068311321</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test: gọi getUsers qua api-gateway">
+      <option name="closed" value="true" />
+      <created>1761100204164</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1761100204164</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: tạo service catalog cho sản phẩm">
+      <option name="closed" value="true" />
+      <created>1761100276958</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1761100276958</updated>
+    </task>
+    <task id="LOCAL-00013" summary="config: cấu hình service catalog-service">
+      <option name="closed" value="true" />
+      <created>1761105048122</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1761105048122</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: api tạo size">
+      <option name="closed" value="true" />
+      <created>1761105095745</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1761105095745</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: config catalog-service đến api-gateway">
+      <option name="closed" value="true" />
+      <created>1761120986385</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1761120986385</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: tạo endpoint product và category">
+      <option name="closed" value="true" />
+      <created>1761121028414</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1761121028414</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Create config" />
     <MESSAGE value="refactor: bootstrap không hỗ trợ với spring boot 3.5.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: bootstrap không hỗ trợ với spring boot 3.5.6" />
+    <MESSAGE value="config thành phần chính" />
+    <MESSAGE value="config auth-service" />
+    <MESSAGE value="route auth-service" />
+    <MESSAGE value="logging" />
+    <MESSAGE value="fix: cập nhật cách route của api-gateway" />
+    <MESSAGE value="fix: bỏ filters: StripPrefix=1" />
+    <MESSAGE value="fix: thay đổi dependency" />
+    <MESSAGE value="test: gọi getUsers qua api-gateway" />
+    <MESSAGE value="feat: tạo service catalog cho sản phẩm" />
+    <MESSAGE value="config: cấu hình service catalog-service" />
+    <MESSAGE value="feat: api tạo size" />
+    <MESSAGE value="feat: config catalog-service đến api-gateway" />
+    <MESSAGE value="feat: tạo endpoint product và category" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: tạo endpoint product và category" />
   </component>
 </project>

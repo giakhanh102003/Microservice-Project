@@ -1,4 +1,4 @@
-package org.example.catalogservice.dto.size.request;
+package org.example.catalogservice.dto.category.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateSizeRequest {
-    private String sizeName;
+public class CreateCategoryRequest {
+    private String name;
+    private String description;
 }

@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(collection = "sizes")
+@Document(collection = "colors")
 public class Color {
     @Id
     private String id;

@@ -14,7 +14,7 @@ public class SizeServiceImpl implements SizeService {
     @Override
     public Size createSize(CreateSizeRequest request) {
         Size size = new Size();
-        size.setName(request.getNameSize());
+        size.setName(request.getSizeName());
         return sizeRepository.save(size);
     }
 }

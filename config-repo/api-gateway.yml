@@ -26,6 +26,10 @@ spring:
             - Path=/catalog/**
           filters:
             - StripPrefix=1  # bỏ /catalog trước khi forward đến catalog-service
+        - id: cart-service
+          uri: lb://cart-service
+          predicates:
+            - Path=/cart/**
 logging:
   level:
     org.springframework.cloud.gateway: TRACE

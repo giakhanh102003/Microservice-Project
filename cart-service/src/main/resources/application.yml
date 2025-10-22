@@ -1,0 +1,9 @@
+# D:\Microservice-Project\cart-service\application.yml
+
+
+spring:
+  application:
+    name: cart-service
+  config:
+    import: "configserver:http://localhost:8888"
+

@@ -1,0 +1,26 @@
+# D:\Microservice-Project\config-repo\catalog-service.yml
+
+server:
+  port: 0
+
+spring:
+  # --- CẤU HÌNH KẾT NỐI MONGODB ---
+  data:
+    mongodb:
+      # Chuỗi kết nối tới MongoDB.
+      # "catalog-db" là tên database bạn muốn sử dụng.
+      uri: mongodb://localhost:27017/catalog-db
+        # Cách 2: Cấu hình từng thông số riêng lẻ (dùng cách này nếu không muốn dùng URI)
+        # host: localhost
+        # port: 27017
+        # database: catalog-db
+      # username: your-username # Bỏ trống nếu không có
+      # password: your-password # Bỏ trống nếu không có
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

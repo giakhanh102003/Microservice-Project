@@ -19,8 +19,13 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-              - Path=/auth/**
-
+            - Path=/auth/**
+        - id: catalog-service
+          uri: lb://catalog-service
+          predicates:
+            - Path=/catalog/**
+          filters:
+            - StripPrefix=1  # bỏ /catalog trước khi forward đến catalog-service
 logging:
   level:
     org.springframework.cloud.gateway: TRACE

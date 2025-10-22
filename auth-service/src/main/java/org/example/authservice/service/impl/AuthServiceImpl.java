@@ -2,8 +2,7 @@ package org.example.authservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.authservice.dto.request.RegisterRequestDTO;
-import org.example.authservice.dto.request.RequestLoginDTO;
-import org.example.authservice.dto.response.LoginResponse;
+import org.example.authservice.dto.response.UserResponse;
 import org.example.authservice.entity.User;
 import org.example.authservice.repository.UserRepository;
 import org.example.authservice.service.AuthService;
@@ -12,7 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -39,7 +40,18 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public LoginResponse login(RequestLoginDTO request) throws Exception {
-        return null;
+    public List<UserResponse> getUsers() throws Exception {
+        // 1. Lấy tất cả User entity từ database
+        List<User> users = userRepository.findAll();
+
+        // 2. Chuyển đổi (map) danh sách User entity sang danh sách UserResponse DTO
+        return users.stream()
+                .map(user -> UserResponse.builder()
+                        .id(user.getId()) // Giả sử User entity có trường id
+                        .fullName(user.getFullName())
+                        .email(user.getEmail())
+                        .role(user.getRole())
+                        .build())
+                .collect(Collectors.toList());
     }
 }

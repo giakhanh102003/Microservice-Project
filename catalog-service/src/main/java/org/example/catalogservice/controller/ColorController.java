@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ColorController {
     private final ColorService colorService;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper;
     @PostMapping("/create")
     public ResponseEntity<?> createColor(@RequestBody CreateColorRequest request) {
         Color savedColor = colorService.createColor(request);

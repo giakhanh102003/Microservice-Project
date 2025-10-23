@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class SizeController {
     private final SizeService sizeService;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper;
 
     @PostMapping("/create")
     public ResponseEntity<?> createSize(@RequestBody CreateSizeRequest request) {

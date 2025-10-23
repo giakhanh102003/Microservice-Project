@@ -1,0 +1,10 @@
+# D:\Microservice-Project\order-service\application.yml
+#server:
+#  port: 0   # để random port, vì Eureka sẽ quản lý service
+
+spring:
+  application:
+    name: order-service
+  config:
+    import: "configserver:http://localhost:8888"
+

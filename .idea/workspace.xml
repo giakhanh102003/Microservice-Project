@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="feat: impl order-service" />
+    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="config : đăng kí payment-service vào eureka, nhận cấu hình từ config-repo">
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/dto/ResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/enums/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/PaymentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/paymentservice/PaymentServiceApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -76,7 +87,7 @@
     "Spring Boot.CatalogServiceApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.OrderServiceApplication.executor": "Debug",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/Microservice-Project",
     "node.js.detected.package.eslint": "true",
@@ -151,6 +162,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="payment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.paymentservice.PaymentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -182,6 +200,7 @@
       <workItem from="1761144236854" duration="5994000" />
       <workItem from="1761183161345" duration="271000" />
       <workItem from="1761183796511" duration="14691000" />
+      <workItem from="1761204382530" duration="3314000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Create config">
       <option name="closed" value="true" />
@@ -367,7 +386,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761203685402</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: Tạo payment-service">
+      <option name="closed" value="true" />
+      <created>1761204483845</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1761204483845</updated>
+    </task>
+    <task id="LOCAL-00025" summary="config : đăng kí payment-service vào eureka, nhận cấu hình từ config-repo">
+      <option name="closed" value="true" />
+      <created>1761206223158</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1761206223158</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +441,8 @@
     <MESSAGE value="config: cấu hình database, đăng kí eureka, cấu hình việc lấy cầu hình trong config-repo" />
     <MESSAGE value="config: route order-service vào api-gateway" />
     <MESSAGE value="feat: impl order-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: impl order-service" />
+    <MESSAGE value="feat: Tạo payment-service" />
+    <MESSAGE value="config : đăng kí payment-service vào eureka, nhận cấu hình từ config-repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="config : đăng kí payment-service vào eureka, nhận cấu hình từ config-repo" />
   </component>
 </project>

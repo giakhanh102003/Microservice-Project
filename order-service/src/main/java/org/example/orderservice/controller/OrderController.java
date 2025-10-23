@@ -48,4 +48,12 @@ public class OrderController {
                 .build();
         return ResponseEntity.ok(responseDTO);
     }
+    @GetMapping("/{orderId}")
+    public ResponseEntity<?> getOrderById(@PathVariable String orderId) {
+        OrderResponse order = orderService.getOrder(orderId);
+        ResponseDTO responseDTO = ResponseDTO.builder()
+                .data(objectMapper.valueToTree(order))
+                .build();
+        return ResponseEntity.ok(responseDTO);
+    }
 }

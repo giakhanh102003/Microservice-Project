@@ -10,4 +10,5 @@ public interface OrderService {
     OrderResponse createOrder(CreateOrderRequest request);
     List<OrderResponse> getUserOrders(Integer userId);
     OrderResponse updateStatus(String orderId, UpdateStatusOrderRequest request);
+    OrderResponse getOrder(String orderId);
 }

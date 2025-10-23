@@ -59,6 +59,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @Transactional
     public OrderResponse updateStatus(String orderId, UpdateStatusOrderRequest request) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found"));
@@ -67,5 +68,12 @@ public class OrderServiceImpl implements OrderService {
         Order updated = orderRepository.save(order);
 
         return orderMapper.toResponse(updated);
+    }
+
+    @Override
+    public OrderResponse getOrder(String orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found"));
+        return orderMapper.toResponse(order);
     }
 }

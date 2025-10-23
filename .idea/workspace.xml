@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="config: route order-service vào api-gateway">
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/dto/request/CreateOrderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/dto/request/UpdateStatusOrderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/dto/response/OrderResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/entity/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/enums/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/mapper/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/ColorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/ColorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/SizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/controller/SizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/org/example/catalogservice/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/org/example/orderservice/OrderServiceApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="feat: impl order-service" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +181,7 @@
       <workItem from="1761123253720" duration="6159000" />
       <workItem from="1761144236854" duration="5994000" />
       <workItem from="1761183161345" duration="271000" />
-      <workItem from="1761183796511" duration="12815000" />
+      <workItem from="1761183796511" duration="14691000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Create config">
       <option name="closed" value="true" />
@@ -384,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761193727617</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: impl order-service">
+      <option name="closed" value="true" />
+      <created>1761203685402</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1761203685402</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,6 +405,7 @@
     <MESSAGE value="feat: impl cart-service, sử dụng feign để gọi tới user-service check exist user" />
     <MESSAGE value="config: cấu hình database, đăng kí eureka, cấu hình việc lấy cầu hình trong config-repo" />
     <MESSAGE value="config: route order-service vào api-gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="config: route order-service vào api-gateway" />
+    <MESSAGE value="feat: impl order-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: impl order-service" />
   </component>
 </project>

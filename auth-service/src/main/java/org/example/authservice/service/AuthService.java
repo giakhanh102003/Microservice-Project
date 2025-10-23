@@ -9,4 +9,5 @@ public interface AuthService {
     void register(RegisterRequestDTO request) throws Exception;
 
     List<UserResponse> getUsers() throws Exception;
+    boolean checkUserExists(Integer userId) throws Exception;
 }

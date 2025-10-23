@@ -2,9 +2,11 @@ package org.example.cartservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.example.cartservice.dto.ResponseDTO;
 import org.example.cartservice.dto.request.AddItemRequest;
 import org.example.cartservice.dto.request.RemoveItemRequest;
 import org.example.cartservice.entity.Cart;
+import org.example.cartservice.feign.AuthServiceFeignClient;
 import org.example.cartservice.repository.CartRepository;
 import org.example.cartservice.service.CartService;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -20,9 +22,13 @@ import java.util.Optional;
 public class CartServiceImpl implements CartService {
     private final CartRepository cartRepository;
     private final RedisTemplate<String, Object> redisTemplate;
+    private final AuthServiceFeignClient authClient;
     private static final String CART_CACHE_KEY = "CART:";
+
     @Override
-    public Cart getCart(String userId) {
+    @Transactional
+    public Cart getCart(Integer userId) {
+
         Cart cart = (Cart) redisTemplate.opsForValue().get(CART_CACHE_KEY + userId);
         if (cart != null) return cart;
 
@@ -33,7 +39,12 @@ public class CartServiceImpl implements CartService {
 
     @Override
     @Transactional
-    public Cart addItem(String userId, AddItemRequest request) {
+    public Cart addItem(Integer userId, AddItemRequest request) {
+        ResponseDTO responseDTO = authClient.checkUserExists(userId);
+        Boolean exists = responseDTO.getData() != null && responseDTO.getData().asBoolean();
+        if (!exists) {
+            throw new IllegalArgumentException("UserId không tồn tại: " + userId);
+        }
         Cart cart = getCart(userId);
 
         Optional<Cart.CartItem> existingItem = cart.getItems().stream()
@@ -60,7 +71,12 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart removeItem(String userId, RemoveItemRequest request) {
+    public Cart removeItem(Integer userId, RemoveItemRequest request) {
+        ResponseDTO responseDTO = authClient.checkUserExists(userId);
+        Boolean exists = responseDTO.getData() != null && responseDTO.getData().asBoolean();
+        if (!exists) {
+            throw new IllegalArgumentException("UserId không tồn tại: " + userId);
+        }
         Cart cart = getCart(userId);
         cart.getItems().removeIf(i -> i.getProductId().equals(request.getProductId())
                 && i.getSize().equals(request.getSize())
@@ -69,5 +85,4 @@ public class CartServiceImpl implements CartService {
         redisTemplate.opsForValue().set(CART_CACHE_KEY + userId, cart);
         return cart;
     }
-
 }

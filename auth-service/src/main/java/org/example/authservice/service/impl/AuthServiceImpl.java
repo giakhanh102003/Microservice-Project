@@ -54,4 +54,11 @@ public class AuthServiceImpl implements AuthService {
                         .build())
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean checkUserExists(Integer userId) throws Exception {
+        return userRepository.existsById(userId);
+    }
+
+
 }

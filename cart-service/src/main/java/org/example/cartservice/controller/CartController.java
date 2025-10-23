@@ -11,13 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/carts")
+@RequestMapping("/cart")
 @RequiredArgsConstructor
 public class CartController {
     private final CartService cartService;
     private final ObjectMapper objectMapper;
     @GetMapping("/{userId}")
-    public ResponseEntity<?> getCart(@PathVariable String userId) {
+    public ResponseEntity<?> getCart(@PathVariable Integer userId) {
         Cart cart = cartService.getCart(userId);
         ResponseDTO responseDTO = ResponseDTO.builder()
                 .data(objectMapper.valueToTree(cart))
@@ -25,15 +25,15 @@ public class CartController {
         return ResponseEntity.ok().body(responseDTO);
     }
     @PostMapping("/{userId}/items")
-    public ResponseEntity<?> addItem(@PathVariable String userId, @RequestBody AddItemRequest request) {
+    public ResponseEntity<?> addItem(@PathVariable Integer userId, @RequestBody AddItemRequest request) {
         Cart cart = cartService.addItem(userId, request);
         ResponseDTO responseDTO = ResponseDTO.builder()
                 .data(objectMapper.valueToTree(cart))
                 .build();
         return ResponseEntity.ok().body(responseDTO);
     }
-    @DeleteMapping
-    public ResponseEntity<?> removeItem(@PathVariable String userId, @RequestBody RemoveItemRequest request) {
+    @DeleteMapping("/{userId}/items")
+    public ResponseEntity<?> removeItem(@PathVariable Integer userId, @RequestBody RemoveItemRequest request) {
         Cart cart = cartService.removeItem(userId, request);
         ResponseDTO responseDTO = ResponseDTO.builder()
                 .msg("item removed")

@@ -35,4 +35,12 @@ public class AuthController {
                 .build();
         return ResponseEntity.ok().body(responseDTO);
     }
+    @GetMapping("/users/{id}/exists")
+    public ResponseEntity<?> checkUserExists(@PathVariable("id") Integer userId) throws Exception {
+        boolean exists = authService.checkUserExists(userId); // implement trong AuthService
+        ResponseDTO responseDTO = ResponseDTO.builder()
+                .data(objectMapper.valueToTree(exists))
+                .build();
+        return ResponseEntity.ok().body(responseDTO);
+    }
 }

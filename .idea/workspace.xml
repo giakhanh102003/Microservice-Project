@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="feat: tạo endpoint product và category">
+    <list default="true" id="4a375bbc-1e52-447b-b7b1-38feea0fa546" name="Changes" comment="feat: Xem, thêm item và xóa item cho cart">
+      <change afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/feign/AuthServiceFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/example/authservice/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/CartServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/CartServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/repository/CartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/org/example/cartservice/service/impl/CartServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -56,6 +71,9 @@
     "Maven.api-gateway [clean].executor": "Run",
     "Maven.api-gateway [install].executor": "Run",
     "Maven.api-gateway [validate].executor": "Run",
+    "Maven.cart-service [clean].executor": "Run",
+    "Maven.cart-service [install].executor": "Run",
+    "Maven.cart-service [validate].executor": "Run",
     "Maven.catalog-service [clean].executor": "Run",
     "Maven.catalog-service [compile].executor": "Run",
     "Maven.catalog-service [install].executor": "Run",
@@ -71,6 +89,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.CartServiceApplication.executor": "Run",
     "Spring Boot.CatalogServiceApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
@@ -106,6 +125,13 @@
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="cart-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.cartservice.CartServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,6 +184,8 @@
       <workItem from="1761068277217" duration="678000" />
       <workItem from="1761096798798" duration="2185000" />
       <workItem from="1761099544178" duration="16320000" />
+      <workItem from="1761123253720" duration="6159000" />
+      <workItem from="1761144236854" duration="5994000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Create config">
       <option name="closed" value="true" />
@@ -287,7 +315,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761121028414</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="config: cấu hình cart-service và thêm vào route api-gateway">
+      <option name="closed" value="true" />
+      <created>1761129088352</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1761129088352</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: Xem, thêm item và xóa item cho cart">
+      <option name="closed" value="true" />
+      <created>1761129130814</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1761129130814</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +364,8 @@
     <MESSAGE value="feat: api tạo size" />
     <MESSAGE value="feat: config catalog-service đến api-gateway" />
     <MESSAGE value="feat: tạo endpoint product và category" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: tạo endpoint product và category" />
+    <MESSAGE value="config: cấu hình cart-service và thêm vào route api-gateway" />
+    <MESSAGE value="feat: Xem, thêm item và xóa item cho cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Xem, thêm item và xóa item cho cart" />
   </component>
 </project>

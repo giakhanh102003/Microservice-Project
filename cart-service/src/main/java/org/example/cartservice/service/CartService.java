@@ -5,7 +5,7 @@ import org.example.cartservice.dto.request.RemoveItemRequest;
 import org.example.cartservice.entity.Cart;
 
 public interface CartService {
-    Cart getCart(String userId);
-    Cart addItem(String userId, AddItemRequest request);
-    Cart removeItem(String userId, RemoveItemRequest request);
+    Cart getCart(Integer userId);
+    Cart addItem(Integer userId, AddItemRequest request);
+    Cart removeItem(Integer userId, RemoveItemRequest request);
 }

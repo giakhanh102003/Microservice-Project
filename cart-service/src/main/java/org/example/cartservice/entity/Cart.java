@@ -18,7 +18,7 @@ public class Cart {
     @Id
     private String id;
 
-    private String userId;
+    private Integer userId;
 
     private List<CartItem> items;
 

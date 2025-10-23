@@ -36,6 +36,12 @@ spring:
             - Path=/order/**
           filters:
             - StripPrefix=1
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+              - Path=/payment/**
+          filters:
+              - StripPrefix=1
 logging:
   level:
     org.springframework.cloud.gateway: TRACE

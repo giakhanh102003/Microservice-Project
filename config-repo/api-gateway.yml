@@ -45,8 +45,10 @@ spring:
             - Path=/order/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter   # ĐẢM BẢO CÓ
+            - name: JwtAuthenticationFilter
+              args: {}
             - name: LoggingFilter
+              args: {}
 
         - id: payment-service
           uri: lb://payment-service

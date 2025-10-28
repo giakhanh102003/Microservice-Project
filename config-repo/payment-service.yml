@@ -24,6 +24,13 @@ eureka:
 feign:
   circuitbreaker:
     enabled: true
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        issuer-uri: https://my-auth-server.com
+jwt:
+  secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY
 
 resilience4j:
   circuitbreaker:

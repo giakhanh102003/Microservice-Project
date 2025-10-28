@@ -24,8 +24,6 @@ security:
   oauth2:
     resourceserver:
       jwt:
-        # Chỉ cần cung cấp issuer-uri, Spring sẽ tự cấu hình phần còn lại
-        # URI này chỉ là định danh, không nhất thiết phải gọi được
         issuer-uri: https://my-auth-server.com
 jwt:
   secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY

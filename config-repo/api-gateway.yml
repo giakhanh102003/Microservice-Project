@@ -20,49 +20,34 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
-
         - id: catalog-service
           uri: lb://catalog-service
           predicates:
             - Path=/catalog/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter
-            - name: LoggingFilter
-
         - id: cart-service
           uri: lb://cart-service
           predicates:
             - Path=/cart/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter
-            - name: LoggingFilter
-
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter
-              args: {}
-            - name: LoggingFilter
-              args: {}
-
         - id: payment-service
           uri: lb://payment-service
           predicates:
             - Path=/payment/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter
-            - name: LoggingFilter
-
-      default-filters:
-        - PreserveHostHeader
 logging:
   level:
     org.example.apigateway.filter: DEBUG
     org.springframework.security: DEBUG
     org.springframework.cloud.gateway: TRACE
+jwt:
+  secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY

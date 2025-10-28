@@ -7,4 +7,16 @@ spring:
     name: auth-service
   config:
     import: "configserver:http://localhost:8888"
-
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          secret: viet-secret-key-viet-secret-key-viet-secret-key
+logging:
+  level:
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.web: DEBUG
+jwt:
+  secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY
+  expiration: 36000000  # 10 tiếng (tính bằng ms)

@@ -2,11 +2,20 @@ package org.example.authservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.authservice.dto.request.RegisterRequestDTO;
+import org.example.authservice.dto.request.RequestLoginDTO;
+import org.example.authservice.dto.response.LoginResponse;
 import org.example.authservice.dto.response.UserResponse;
 import org.example.authservice.entity.User;
 import org.example.authservice.repository.UserRepository;
 import org.example.authservice.service.AuthService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import org.example.authservice.service.JwtService;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +28,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
 
     @Override
     @Transactional
@@ -60,5 +71,31 @@ public class AuthServiceImpl implements AuthService {
         return userRepository.existsById(userId);
     }
 
+    @Override
+    public LoginResponse login(RequestLoginDTO request) throws Exception {
+        // 1. Xác thực người dùng bằng Spring Security
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(),
+                        request.getPassword()
+                )
+        );
 
+        // 2. Nếu xác thực thành công, tìm lại thông tin user
+//        var user = userRepository.findByEmail(request.getEmail())
+//                .orElseThrow(() -> new UsernameNotFoundException("Không tìm thấy người dùng với email: " + request.getEmail()));
+        var user = (User) authentication.getPrincipal();
+
+        // 3. Tạo JWT token
+        var jwtToken = jwtService.generateToken(user);
+
+        // 4. Trả về token cho client
+        return LoginResponse.builder()
+                .token(jwtToken)
+                .build();
+    }
 }
+
+
+
+

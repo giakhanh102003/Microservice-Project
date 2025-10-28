@@ -2,6 +2,25 @@
 server:
   port: 8888
 
+#spring:
+#  application:
+#    name: config-server
+#  profiles:
+#    active: jdbc
+#  datasource:
+#    url: jdbc:oracle:thin:@//localhost:1522/XEPDB1
+#    username: PROPERTIES
+#    password: PROPERTIES
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#  cloud:
+#    config:
+#      server:
+#        jdbc:
+#          sql: >
+#            SELECT PROPERTY_KEY, PROPERTY_VALUE
+#            FROM PROPERTIES
+#            WHERE APPLICATION = ? AND PROFILE = ? AND LABEL = ?
+#          default-label: main
 spring:
   application:
     name: config-server

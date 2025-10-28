@@ -5,6 +5,28 @@
 spring:
   application:
     name: order-service
+#  profiles:
+#    active: prod
   config:
     import: "configserver:http://localhost:8888"
-
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          secret: viet-secret-key-viet-secret-key-viet-secret-key
+logging:
+  level:
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.web: DEBUG
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: prod
+#  application:
+#    name: order-service
+#server:
+#  port: 8081
+jwt:
+  secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY

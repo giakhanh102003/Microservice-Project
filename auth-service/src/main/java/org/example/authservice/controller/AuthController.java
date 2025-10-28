@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.authservice.dto.ResponseDTO;
 import org.example.authservice.dto.request.RegisterRequestDTO;
+import org.example.authservice.dto.request.RequestLoginDTO;
+import org.example.authservice.dto.response.LoginResponse;
 import org.example.authservice.dto.response.UserResponse;
 import org.example.authservice.service.AuthService;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,7 @@ import java.util.List;
 @RestController
 @Slf4j
 @Validated
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
@@ -40,6 +42,14 @@ public class AuthController {
         boolean exists = authService.checkUserExists(userId); // implement trong AuthService
         ResponseDTO responseDTO = ResponseDTO.builder()
                 .data(objectMapper.valueToTree(exists))
+                .build();
+        return ResponseEntity.ok().body(responseDTO);
+    }
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody RequestLoginDTO request) throws Exception {
+        LoginResponse loginResponse = authService.login(request);
+        ResponseDTO responseDTO = ResponseDTO.builder()
+                .data(objectMapper.valueToTree(loginResponse))
                 .build();
         return ResponseEntity.ok().body(responseDTO);
     }

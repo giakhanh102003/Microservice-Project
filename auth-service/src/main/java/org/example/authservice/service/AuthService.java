@@ -1,6 +1,8 @@
 package org.example.authservice.service;
 
 import org.example.authservice.dto.request.RegisterRequestDTO;
+import org.example.authservice.dto.request.RequestLoginDTO;
+import org.example.authservice.dto.response.LoginResponse;
 import org.example.authservice.dto.response.UserResponse;
 
 import java.util.List;
@@ -10,4 +12,5 @@ public interface AuthService {
 
     List<UserResponse> getUsers() throws Exception;
     boolean checkUserExists(Integer userId) throws Exception;
+    LoginResponse login(RequestLoginDTO request) throws Exception;
 }

@@ -10,8 +10,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-# Cấu hình định tuyến (routes) cho Gateway
 spring:
   cloud:
     gateway:
@@ -20,30 +18,49 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
         - id: catalog-service
           uri: lb://catalog-service
           predicates:
             - Path=/catalog/**
           filters:
-            - StripPrefix=1  # bỏ /catalog trước khi forward đến catalog-service
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+            - name: LoggingFilter
+
         - id: cart-service
           uri: lb://cart-service
           predicates:
             - Path=/cart/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+            - name: LoggingFilter
+
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/**
           filters:
             - StripPrefix=1
+            - name: JwtAuthenticationFilter   # ĐẢM BẢO CÓ
+            - name: LoggingFilter
+
         - id: payment-service
           uri: lb://payment-service
           predicates:
-              - Path=/payment/**
+            - Path=/payment/**
           filters:
-              - StripPrefix=1
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+            - name: LoggingFilter
+
+      default-filters:
+        - PreserveHostHeader
 logging:
   level:
+    org.example.apigateway.filter: DEBUG
+    org.springframework.security: DEBUG
     org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
-    reactor.netty.http.client: DEBUG

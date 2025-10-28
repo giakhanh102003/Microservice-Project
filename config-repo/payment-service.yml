@@ -20,3 +20,18 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+feign:
+  circuitbreaker:
+    enabled: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      orderServiceFeignClient:
+        slidingWindowSize: 10              # Số request gần nhất để thống kê lỗi
+        minimumNumberOfCalls: 5            # Số request tối thiểu để bắt đầu tính toán
+        failureRateThreshold: 50           # 50% lỗi thì mở circuit
+        waitDurationInOpenState: 10s       # Mở circuit 10s rồi thử lại
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true

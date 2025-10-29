@@ -11,7 +11,13 @@ spring:
       host: localhost
       port: 6379
 
-
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        issuer-uri: https://my-auth-server.com
+jwt:
+  secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY
 eureka:
   instance:
     prefer-ip-address: true

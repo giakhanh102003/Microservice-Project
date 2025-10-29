@@ -17,7 +17,13 @@ spring:
       # username: your-username # Bỏ trống nếu không có
       # password: your-password # Bỏ trống nếu không có
 
-
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        issuer-uri: https://my-auth-server.com
+jwt:
+  secret: bXktc3VwZXItc2VjdXJlLWtleS1oZXJlLXNob3VsZC1iZS1sb25nLWVuYWY
 eureka:
   instance:
     prefer-ip-address: true
